@@ -37,6 +37,9 @@ router.post("/",(req,res)=>{
     })
     res.json(noteContent)
 })
-
-
+router.delete('/:id',(req,res)=>{
+    const noteId =req.params.id
+    console.log(noteId)
+})
+//research filter method or splice and find index
 module.exports=router
