@@ -1,5 +1,5 @@
 
-
+//import express library and routes
 const express= require("express")
 const noteRoutes= require("./notes")
 const app = express()

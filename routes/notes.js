@@ -7,7 +7,7 @@ const {
     v4:uuidv4
 }=require("uuid")
 router.get ("/",(req,res)=> res.status(200).json(db))
-
+// when there is no text or title, throws out an error message 
 
 router.post("/",(req,res)=>{
     const{
@@ -24,10 +24,12 @@ router.post("/",(req,res)=>{
         text,
         id: uuidv4()
     }
+    //success message when note is posted
     const noteContent= {
         status:"Success",
         body: postedNote
     }
+
     db.push(postedNote)
     fs.writeFileSync("./db/db.json",JSON.stringify(db),(error)=>{
         if(error){
